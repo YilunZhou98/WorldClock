@@ -7,4 +7,5 @@
     <string name="tokyo">Tokyo</string>
     <string name="newyork">New York</string>
     <string name="beijing">Beijing</string>
+    <string name="timeformat">Change Time Format</string>
 </resources>

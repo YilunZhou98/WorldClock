@@ -1,7 +1,5 @@
 package com.example.worldclock;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +9,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class twelvehrhourformat extends AppCompatActivity {
 
     Calendar current;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,25 +24,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void getSydTime(View view){
         current = Calendar.getInstance();
-        SimpleDateFormat mdformat = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat mdformat = new SimpleDateFormat("hh:mm:ss a");
         String strdate = mdformat.format(current.getTime());
         display(strdate);
     }
 
     public void getChinaTime(View view) {
-       Calendar china = Calendar.getInstance();
-       china.setTime(new Date());
-       china.add(Calendar.HOUR_OF_DAY,-3);
-       SimpleDateFormat mdformat2 = new SimpleDateFormat("HH:mm:ss");
-       String strdate2 = mdformat2.format(china.getTime());
-       displayChina(strdate2);
+        Calendar china = Calendar.getInstance();
+        china.setTime(new Date());
+        china.add(Calendar.HOUR_OF_DAY,-3);
+        SimpleDateFormat mdformat2 = new SimpleDateFormat("hh:mm:ss a");
+        String strdate2 = mdformat2.format(china.getTime());
+        displayChina(strdate2);
     }
 
     public void getNYTime(View view) {
         Calendar ny = Calendar.getInstance();
         ny.setTime(new Date());
         ny.add(Calendar.HOUR_OF_DAY,-14);
-        SimpleDateFormat mdformat3 = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat mdformat3 = new SimpleDateFormat("hh:mm:ss a");
         String strdate3 = mdformat3.format(ny.getTime());
         displayNY(strdate3);
     }
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         Calendar tokyo = Calendar.getInstance();
         tokyo.setTime(new Date());
         tokyo.add(Calendar.HOUR_OF_DAY,-1);
-        SimpleDateFormat mdformat4 = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat mdformat4 = new SimpleDateFormat("hh:mm:ss a");
         String strdate4 = mdformat4.format(tokyo.getTime());
         displayTokyo(strdate4);
     }
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         Calendar london = Calendar.getInstance();
         london.setTime(new Date());
         london.add(Calendar.HOUR_OF_DAY,-9);
-        SimpleDateFormat mdformat5 = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat mdformat5 = new SimpleDateFormat("hh:mm:ss a");
         String strdate5 = mdformat5.format(london.getTime());
         displayLondon(strdate5);
     }
@@ -93,10 +91,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeformat (View view){
-        Intent intent = new Intent(getApplicationContext(),twelvehrhourformat.class);
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
         finish();
     }
-
-
 }

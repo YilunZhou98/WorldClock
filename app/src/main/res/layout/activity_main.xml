@@ -50,6 +50,18 @@
                 app:layout_constraintRight_toRightOf="parent"
                 />
 
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/timeformat"
+                android:onClick="changeformat"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white">
+
+
+            </Button>
+
 
 
 
